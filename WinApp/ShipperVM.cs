@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace WinApp
 {
- public   class ProductVM
+    [Serializable]
+    public class ShipperVM
     {
-        public string ProductName { get; set; }
-        public decimal? Price { get; set; }
-        public short? Stock { get; set; }
-
+        public int? ShipperID { get; set; }
+        public string CompanyName { get; set; }
+        public string Phone { get; set; }
         public override string ToString()
         {
-            return ProductName;
+            return CompanyName;
         }
     }
 }

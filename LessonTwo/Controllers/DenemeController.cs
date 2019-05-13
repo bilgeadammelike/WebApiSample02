@@ -33,6 +33,8 @@ namespace LessonTwo.Controllers
             return shpper;
         }
 
+        [Route("")]
+        //[HttpPost] //I added this attribute explicitly, and it worked
         public IHttpActionResult Post([FromBody]Shippers s)
         {
             if(s == null)
@@ -43,11 +45,18 @@ namespace LessonTwo.Controllers
             using (NORTHWNDEntities db = new NORTHWNDEntities())
             {
                 db.Shippers.Add(s);
+                db.SaveChanges();
             }
 
             return Ok();
         }
 
 
+        public void PostHede()
+        {
+
+        }
     }
 }
+
+
